@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 72" role="img" aria-label="Gamage Builders">
+  <defs>
+    <linearGradient id="roof" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f5d78e"/>
+      <stop offset="100%" stop-color="#e8b923"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(4,4)">
+    <path d="M28 8 A20 20 0 1 1 28 48 L28 28 L18 28" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/>
+    <path d="M12 28 L44 28" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M52 12 L52 52 Q72 52 72 32 Q72 12 52 12 Z" fill="#4a4a4a"/>
+    <path d="M34 14 L50 4 L66 14 Z" fill="url(#roof)"/>
+    <path d="M38 30 Q50 18 62 30 L62 44 Q50 52 38 44 Z" fill="#c9a227" opacity=".85"/>
+  </g>
+  <rect x="0" y="56" width="220" height="16" rx="2" fill="#111"/>
+  <text x="110" y="68" text-anchor="middle" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" letter-spacing="2">GAMAGE BUILDERS</text>
+</svg>
