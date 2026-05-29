@@ -1007,11 +1007,7 @@ ul {
 }
 
 .form-honey {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  display: none !important;
 }
 
 .contact-form button[type="submit"]:disabled {
