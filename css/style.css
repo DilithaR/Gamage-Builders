@@ -1000,6 +1000,25 @@ ul {
   display: none;
 }
 
+.form-message.pending {
+  display: block;
+  background: var(--gray-200);
+  color: var(--blue-dark);
+}
+
+.form-honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 .form-message.success {
   display: block;
   background: #d1fae5;

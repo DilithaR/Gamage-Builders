@@ -90,6 +90,8 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       const msg = form.querySelector(".form-message");
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const endpoint = form.getAttribute("data-endpoint");
       let valid = true;
 
       form.querySelectorAll("[required]").forEach(function (field) {
@@ -109,15 +111,49 @@
 
       if (!msg) return;
 
-      if (valid) {
-        msg.className = "form-message success";
-        msg.textContent =
-          "Thank you! Your message has been recorded. We will contact you shortly.";
-        form.reset();
-      } else {
+      if (!valid) {
         msg.className = "form-message error";
         msg.textContent = "Please fill in all required fields correctly.";
+        return;
       }
+
+      if (!endpoint) {
+        msg.className = "form-message error";
+        msg.textContent = "Form is not configured. Please call or email us directly.";
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+      msg.className = "form-message pending";
+      msg.textContent = "Sending your message...";
+
+      fetch(endpoint, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then(function (response) {
+          return response.json().then(function (data) {
+            if (!response.ok || !data.success) {
+              throw new Error(data.message || "Submit failed");
+            }
+            return data;
+          });
+        })
+        .then(function () {
+          msg.className = "form-message success";
+          msg.textContent =
+            "Thank you! Your message has been sent. We will contact you shortly.";
+          form.reset();
+        })
+        .catch(function () {
+          msg.className = "form-message error";
+          msg.textContent =
+            "Something went wrong. Please try again or call us at +94 77 937 1981.";
+        })
+        .finally(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
     });
   });
 

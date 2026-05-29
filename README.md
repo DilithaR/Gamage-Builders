@@ -30,7 +30,7 @@ No server is required. For best results when testing forms or maps, you can use 
 
 - **Social links:** Edit Facebook, Instagram, and LinkedIn URLs in the footer of each HTML file (search for `facebook.com`).
 - **Project photos:** Replace Unsplash placeholder images on `projects.html` and the home page with photos of your real work.
-- **Contact form:** The form shows a success message in the browser only. To receive emails, connect it to [Formspree](https://formspree.io), your hosting provider, or a small backend script.
+- **Contact form:** Quote requests are sent to **info@gamagebuilders.lk** via [FormSubmit](https://formsubmit.co). On the first submission, check that inbox for a one-time activation link from FormSubmit.
 - **Map:** The contact page embeds Google Maps for your Akuressa address; adjust the iframe `src` if needed.
 
 ## Folder structure
